@@ -1,22 +1,33 @@
 FROM ubuntu:latest
 
-RUN apt-get update && \
+MAINTAINER fvoncina <fvoncina@gmail.com>
+
+ARG SENCHACMD_VERSION=7.1.0.15
+
+RUN mkdir -p /project && \
+    apt-get update && \
     apt-get install -y \
-        openjdk-8-jdk \ 
+        openjdk-8-jre \ 
         curl \
         ruby \
         unzip
 
+COPY entrypoint.sh /
+
 RUN mkdir /cmd && \
-    curl -o /cmd/cmd.sh.zip http://cdn.sencha.com/cmd/7.1.0.15/no-jre/SenchaCmd-7.1.0.15-linux-amd64.sh.zip && \
+    curl -o /cmd/cmd.sh.zip http://cdn.sencha.com/cmd/${SENCHACMD_VERSION}/no-jre/SenchaCmd-${SENCHACMD_VERSION}-linux-amd64.sh.zip && \
     unzip -p /cmd/cmd.sh.zip > /cmd/cmd-install.sh && \
     chmod +x /cmd/cmd-install.sh && \
-    /cmd/cmd-install.sh -q && \
-    rm -rf /cmd
+    /cmd/cmd-install.sh -q -dir /sencha && \
+    rm -rf /cmd && \
+    chmod +x /entrypoint.sh
 
-ENV PATH /root/bin/Sencha/Cmd/7.1.0.15/:$PATH
+ENV PATH /sencha:$PATH
 
-COPY entrypoint.sh /
+VOLUME /project
+WORKDIR /project
+
+EXPOSE 1841
 
 ENTRYPOINT ["/entrypoint.sh"]
 
