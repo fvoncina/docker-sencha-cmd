@@ -2,7 +2,7 @@ Image to run [Sencha Cmd](http://www.sencha.com/products/sencha-cmd/#overview).
 
 ## What's Inside
 
-This image is based of [Ubuntu](https://hub.docker.com/_/ubuntu/)
+This image is based of [Ubuntu](https://hub.docker.com/_/ubuntu/) (some issues with PhantomJS on debian)
 
 ## Supported tags and respective `Dockerfile` links
 
