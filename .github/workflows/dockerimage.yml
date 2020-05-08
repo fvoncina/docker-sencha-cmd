@@ -15,5 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build /7.2.0.66 --file Dockerfile --tag fvoncina/docker-sencha-cmd:7.2.0.66 --tag fvoncina/docker-sencha-cmd:latest      
+      run: docker build --file ./7.2.0.66/Dockerfile --tag fvoncina/docker-sencha-cmd:7.2.0.66 ./7.2.0.66
       
