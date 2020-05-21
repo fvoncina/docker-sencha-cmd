@@ -2,7 +2,7 @@ FROM openjdk:8-jre-slim
 
 MAINTAINER fvoncina <fvoncina@gmail.com>
 
-ARG SENCHACMD_VERSION=6.2.2
+ARG SENCHACMD_VERSION=6.2.2.36
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
