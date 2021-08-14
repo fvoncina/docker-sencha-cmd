@@ -9,7 +9,7 @@ if [ -z "${BUILDER}" ]; then
 fi
 
 docker buildx use $BUILDER_NAME
-docker buildx build --build-arg "SENCHACMD_VERSION=7.4.0.39" --platform linux/amd64,linux/arm64 -t "fvoncina/docker-sencha-cmd:7.4.0.39"  --push .
+docker buildx build --build-arg "SENCHACMD_VERSION=7.4.0.39" --platform linux/amd64,linux/arm64 -t "fvoncina/docker-sencha-cmd:7.4.0.39"  --push . #--progress plain
 
 
 # declare -a versions=(
@@ -41,4 +41,4 @@ docker buildx build --build-arg "SENCHACMD_VERSION=7.4.0.39" --platform linux/am
 #     let INDEX=${INDEX}+1    
 # done
 
-docker buildx rm $BUILDER_NAME
+#docker buildx rm $BUILDER_NAME
