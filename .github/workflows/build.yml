@@ -29,7 +29,8 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: 7.4.0.39
+          build-args: |
+            SENCHACMD_VERSION=7.4.0.39
           tags: fvoncina/docker-sencha-cmd:7.4.0.39,fvoncina/docker-sencha-cmd:latest
       
       - name: Build and push 7.3.0.19
@@ -37,8 +38,9 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          push: true
-          build-args: 7.3.0.19
+          push: true          
+          build-args: |
+            SENCHACMD_VERSION=7.3.0.19
           tags: fvoncina/docker-sencha-cmd:7.3.0.19
 
       - name: Build and push 7.2.0.66
@@ -47,7 +49,8 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: 7.2.0.66
+          build-args: |
+            SENCHACMD_VERSION=7.2.0.66          
           tags: fvoncina/docker-sencha-cmd:7.2.0.66  
       
       - name: Build and push 7.1.0.15
@@ -56,7 +59,8 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: 7.1.0.15
+          build-args: |
+            SENCHACMD_VERSION=7.1.0.15          
           tags: fvoncina/docker-sencha-cmd:7.1.0.15
       
       - name: Build and push 7.0.0.40
@@ -65,7 +69,8 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: 7.0.0.40
+          build-args: |
+            SENCHACMD_VERSION=7.0.0.40          
           tags: fvoncina/docker-sencha-cmd:7.0.0.40
       
       - name: Build and push 6.7.0.63
@@ -74,7 +79,8 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: 6.7.0.63
+          build-args: |
+            SENCHACMD_VERSION=6.7.0.63          
           tags: fvoncina/docker-sencha-cmd:6.7.0.63
       
       - name: Build and push 6.6.0.13
@@ -83,7 +89,8 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: 6.6.0.13
+          build-args: |
+            SENCHACMD_VERSION=6.6.0.13          
           tags: fvoncina/docker-sencha-cmd:6.6.0.13
       
       - name: Build and push 6.5.3.6
@@ -92,5 +99,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          build-args: 6.5.3.6
+          build-args: |
+            SENCHACMD_VERSION=6.5.3.6          
           tags: fvoncina/docker-sencha-cmd:6.5.3.6
