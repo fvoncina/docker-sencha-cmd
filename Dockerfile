@@ -2,7 +2,7 @@
 #FROM openjdk:8-jre-alpine
 FROM openjdk:8-jre
 
-ARG SENCHACMD_VERSION=7.4.0.39
+#ARG SENCHACMD_VERSION=7.4.0.39
 
 COPY entrypoint.sh /
 
