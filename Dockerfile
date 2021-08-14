@@ -4,7 +4,7 @@ ARG SENCHACMD_VERSION=7.4.0.39
 
 COPY entrypoint.sh /
 
-RUN sed -i 's/http/https/g' /etc/apt/sources.list && apt update && apt install -y binutils libfreetype6 ruby tzdata ttf-dejavu unzip fontconfig wget curl
+RUN sed -i 's/http/https/g' /etc/apt/sources.list && apt update && apt install -y libc6 binutils libfreetype6 ruby tzdata ttf-dejavu unzip fontconfig wget curl
 
 RUN wget -q https://cdn.sencha.com/cmd/$SENCHACMD_VERSION/no-jre/SenchaCmd-$SENCHACMD_VERSION-linux-amd64.sh.zip -O senchacmd.zip && \
   echo "Expanding senchacmd.zip" && unzip senchacmd.zip && rm senchacmd.zip && chmod +x SenchaCmd-$SENCHACMD_VERSION-linux-amd64.sh && \
