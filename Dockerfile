@@ -1,4 +1,4 @@
-FROM openjdk:16-buster
+FROM openjdk:8-jre-buster
 
 ARG SENCHACMD_VERSION=7.4.0.39
 
