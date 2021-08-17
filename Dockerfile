@@ -24,6 +24,9 @@ RUN wget -qO- https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTO
   && rm -rf /phantomjs* /var/lib/apt/lists/* \
   && cp /usr/local/bin/phantomjs /opt/Sencha/Cmd/$SENCHACMD_VERSION/bin/linux-x64/phantomjs/phantomjs
 
+VOLUME /project
+WORKDIR /project
+
 EXPOSE 1841
 
 ENV PATH="/opt/Sencha/Cmd/$SENCHACMD_VERSION:${PATH}"
